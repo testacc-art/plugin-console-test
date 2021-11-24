@@ -11,10 +11,15 @@ jobs:
         py_ver: ["3.7", "3.8", "3.9", "3.11.0-alpha.2"]
     steps:
     - uses: actions/checkout@v2.4.0
-    - name: Set up Python
-      uses: actions/setup-python@v2.2.2
-      with:
-        python-version: ${{ matrix.py_ver }}
+#     - name: Set up Python
+#       uses: actions/setup-python@v2.2.2
+#       with:
+#         python-version: ${{ matrix.py_ver }}
+    - run: |
+        sudo apt update
+        sudo apt install software-properties-common
+        sudo add-apt-repository ppa:deadsnakes/ppa
+        sudo apt install python3.10
     - name: Install Ubuntu dependencies
       run: >
         sudo apt-get update -qq && sudo apt-get install -qq --no-install-recommends
