@@ -28,5 +28,6 @@ jobs:
     #   uses: mxschmitt/action-tmate@v1
     - name: Test with Pytest
       run: |
+        sudo apt-get install python3-gi
         export DISPLAY=':99.0'
         xvfb-run pytest
