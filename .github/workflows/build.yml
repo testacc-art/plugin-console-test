@@ -27,4 +27,6 @@ jobs:
     # - name: Setup tmate session
     #   uses: mxschmitt/action-tmate@v1
     - name: Test with Pytest
-      run: xvfb-run pytest
+      run: |
+        export DISPLAY=':99.0'
+        xvfb-run pytest
