@@ -29,6 +29,6 @@ jobs:
     #   uses: mxschmitt/action-tmate@v1
     - name: Test with Pytest
       run: |
-        export DISPLAY=':99.0'
+        # export DISPLAY=':99.0'
         # xvfb-run --server-args="-screen 0 1024x768x24" pytest
         pytest
