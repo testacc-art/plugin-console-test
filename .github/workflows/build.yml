@@ -30,4 +30,5 @@ jobs:
     - name: Test with Pytest
       run: |
         export DISPLAY=':99.0'
-        xvfb-run --server-args="-screen 0 1024x768x24" pytest
+        # xvfb-run --server-args="-screen 0 1024x768x24" pytest
+        pytest
