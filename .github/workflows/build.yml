@@ -39,7 +39,8 @@ jobs:
     - name: Test with Pytest
       run: |
         # export DISPLAY=':99.0'
-        sudo apt-get remove xvfb
-        sudo apt-get install -y xvfb
+        export DISPLAY=:0.0
+        # sudo apt-get remove xvfb
+        # sudo apt-get install -y xvfb
         xvfb-run pytest
         pytest
