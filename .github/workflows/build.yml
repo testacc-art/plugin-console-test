@@ -19,7 +19,6 @@ jobs:
         sudo apt update
         sudo apt install software-properties-common
         sudo add-apt-repository ppa:deadsnakes/ppa
-        sudo apt-get remove python3
         sudo apt install python3.10
         echo 'alias python=python3.10' >> ~/.bashrc
         echo 'alias python=python3.10' >> ~/.bash_aliases
@@ -30,8 +29,9 @@ jobs:
       run: >
         sudo apt-get update -qq && sudo apt-get install -qq --no-install-recommends
         gir1.2-gtk-3.0 libgirepository1.0-dev
-    - name: Install Poetry
-      uses: abatilo/actions-poetry@v2.1.4
+#     - name: Install Poetry
+#       uses: abatilo/actions-poetry@v2.1.4
+    - run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3.10 -
     - name: Turn off Virtualenvs
       run: poetry config virtualenvs.create false
     - name: Install Python Dependencies
