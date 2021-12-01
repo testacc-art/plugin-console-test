@@ -37,6 +37,7 @@ jobs:
         export PATH="$HOME/.poetry/bin:$PATH"
         poetry env use 3.10
         poetry config virtualenvs.create false
+        poetry env info
         poetry install
         xvfb-run pytest
 #     - name: Turn off Virtualenvs
