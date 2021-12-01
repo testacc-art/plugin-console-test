@@ -33,6 +33,7 @@ jobs:
 #       uses: abatilo/actions-poetry@v2.1.4
     - run: |
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3.10 -
+        export PATH="$HOME/.poetry/bin:$PATH"
         poetry config virtualenvs.create false
         poetry install
         xvfb-run pytest
