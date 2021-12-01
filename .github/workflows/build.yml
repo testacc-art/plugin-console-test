@@ -19,7 +19,10 @@ jobs:
         sudo apt update
         sudo apt install software-properties-common
         sudo add-apt-repository ppa:deadsnakes/ppa
+        sudo apt-get remove python3
+        
         sudo apt install python3.10
+        ln -s /usr/bin/python3.10 /usr/bin/python3
         echo 'alias python="python3.10"' >> ~/.bashrc
         echo 'alias python="python3.10"' >> ~/.bash_aliases
         python --version
