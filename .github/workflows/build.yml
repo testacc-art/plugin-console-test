@@ -20,8 +20,8 @@ jobs:
         sudo apt install software-properties-common
         sudo add-apt-repository ppa:deadsnakes/ppa
         sudo apt install python3.10
-        echo 'alias python=python3.10' >> ~/.bashrc
-        echo 'alias python=python3.10' >> ~/.bash_aliases
+        echo 'alias python="python3.10"' >> ~/.bashrc
+        echo 'alias python="python3.10"' >> ~/.bash_aliases
         python --version
         python3 --version
         python3.10 --version
