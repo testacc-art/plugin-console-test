@@ -31,18 +31,22 @@ jobs:
         gir1.2-gtk-3.0 libgirepository1.0-dev
 #     - name: Install Poetry
 #       uses: abatilo/actions-poetry@v2.1.4
-    - run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3.10 -
-    - name: Turn off Virtualenvs
-      run: poetry config virtualenvs.create false
-    - name: Install Python Dependencies
-      run: poetry install
-    # - name: Setup tmate session
-    #   uses: mxschmitt/action-tmate@v1
-    - name: Test with Pytest
-      run: |
-        # export DISPLAY=':99.0'
-        export DISPLAY=:0.0
-        # sudo apt-get remove xvfb
-        # sudo apt-get install -y xvfb
+    - run: |
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3.10 -
+        poetry config virtualenvs.create false
+        poetry install
         xvfb-run pytest
-        # pytest
+#     - name: Turn off Virtualenvs
+#       run: poetry config virtualenvs.create false
+#     - name: Install Python Dependencies
+#       run: poetry install
+#     # - name: Setup tmate session
+#     #   uses: mxschmitt/action-tmate@v1
+#     - name: Test with Pytest
+#       run: |
+#         # export DISPLAY=':99.0'
+#         export DISPLAY=:0.0
+#         # sudo apt-get remove xvfb
+#         # sudo apt-get install -y xvfb
+#         xvfb-run pytest
+#         # pytest
